@@ -1,14 +1,10 @@
-CC=g++
-CFLAGS=-Wall -std=c++17
-LDFLAGS=
-SOURCES= main.cpp pentagon.cpp trapeze.cpp trapeze.h pentagon.cpp pentagon.h rhombus.cpp rhombus.h factory.cpp factory.h processor.cpp processor.h figure.h point.cpp point.h subscriber.cpp subscriber.h
-OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=lab8
+CC = g++
+FLAGS = -std=c++11 -Wall
+FILES = *.cpp
+PROG = run
 
-all: $(SOURCES) $(EXECUTABLE)
+all:
+	$(CC) $(FLAGS) -o $(PROG) $(FILES)
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o $@
-
-.cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
+clean:
+	rm -f *.o run
