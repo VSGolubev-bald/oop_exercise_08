@@ -1,5 +1,5 @@
 CC = g++
-FLAGS = -std=c++17 -Wall
+FLAGS = -std=c++17 -Wall -pthread
 FILES = *.cpp
 PROG = run
 
